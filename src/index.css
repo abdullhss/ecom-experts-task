@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-wyze-purple: #4e2fd2;
+  --color-wyze-purple-70: rgba(78, 47, 210, 0.7);
+  --color-wyze-green: #0aa288;
+  --color-wyze-green-bg: rgba(29, 240, 187, 0.04);
+  --color-surface-blue: #edf4ff;
+  --color-obsidian: #0b0d10;
+  --color-heading: #1f1f1f;
+  --color-text-muted: #484848;
+  --color-label: #a8b2bd;
+  --color-strike: #6f7882;
+  --color-price-red: #d8392b;
+  --color-gray-70: #575757;
+  --color-border: #ced6de;
+  --color-border-light: #e6ebf0;
+  --color-quantity-bg: #f0f4f7;
+  --color-disabled-bg: #f1f1f2;
+  --color-link: #0000ee;
+
+  --font-gilroy: 'Gilroy', 'Inter', system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.jsdelivr.net/gh/nicholasrq/gilroy-fonts/Gilroy-Regular.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.jsdelivr.net/gh/nicholasrq/gilroy-fonts/Gilroy-Medium.woff2')
+    format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.jsdelivr.net/gh/nicholasrq/gilroy-fonts/Gilroy-SemiBold.woff2')
+    format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('https://cdn.jsdelivr.net/gh/nicholasrq/gilroy-fonts/Gilroy-Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-gilroy);
+  -webkit-font-smoothing: antialiased;
+}
