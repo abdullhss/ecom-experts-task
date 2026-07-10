@@ -3,7 +3,7 @@
 A React prototype of a multi-step bundle builder with a live review panel.
 
 ## Live Link
-Open [http://localhost:5173](http://localhost:5173)
+Open [https://ecom-experts-task-ten.vercel.app/](https://ecom-experts-task-ten.vercel.app/)
 
 ## Quick start
 
