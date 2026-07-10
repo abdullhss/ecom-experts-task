@@ -13,43 +13,45 @@ export function SaveBadge({ percent }: SaveBadgeProps) {
 type PriceDisplayProps = {
   originalPrice: number
   salePrice: number
-  size?: 'sm' | 'md'
-  align?: 'left' | 'right'
+  layout?: 'stacked' | 'inline'
+  isMonthly?: boolean
 }
 
 export function PriceDisplay({
   originalPrice,
   salePrice,
-  size = 'md',
-  align = 'right',
+  layout = 'stacked',
+  isMonthly = false,
 }: PriceDisplayProps) {
   const hasDiscount = originalPrice !== salePrice
-  const alignClass = align === 'right' ? 'items-end text-right' : 'items-start'
+  const suffix = isMonthly ? '/mo' : ''
 
-  if (size === 'sm') {
+  if (layout === 'inline') {
     return (
-      <div className={`flex flex-col ${alignClass}`}>
+      <div className="flex items-center justify-end gap-2.5 whitespace-nowrap text-right">
         {hasDiscount && (
-          <span className="text-sm leading-4 text-strike line-through">
+          <span className="text-base leading-4 text-strike line-through">
             ${originalPrice.toFixed(2)}
+            {suffix}
           </span>
         )}
-        <span className="text-sm font-semibold leading-4 text-wyze-purple">
-          {salePrice === 0 ? 'FREE' : `$${salePrice.toFixed(2)}`}
+        <span className="text-base font-semibold leading-4 text-wyze-purple">
+          {salePrice === 0 ? 'FREE' : `$${salePrice.toFixed(2)}${suffix}`}
         </span>
       </div>
     )
   }
 
   return (
-    <div className={`flex flex-col gap-[3px] ${alignClass}`}>
+    <div className="flex flex-col items-end gap-[3px] text-right">
       {hasDiscount && (
         <span className="text-base leading-none text-price-red line-through">
           ${originalPrice.toFixed(2)}
+          {suffix}
         </span>
       )}
       <span className="text-base leading-none text-gray-70">
-        ${salePrice.toFixed(2)}
+        {salePrice === 0 ? 'FREE' : `$${salePrice.toFixed(2)}${suffix}`}
       </span>
     </div>
   )

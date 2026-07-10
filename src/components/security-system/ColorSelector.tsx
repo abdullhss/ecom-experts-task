@@ -1,9 +1,9 @@
-import type { ColorOption } from '../../data/products'
+import type { ProductVariant } from '../../types/catalog'
 
 type ColorSelectorProps = {
-  colors: ColorOption[]
+  colors: ProductVariant[]
   selectedId: string
-  onChange?: (id: string) => void
+  onChange: (id: string) => void
 }
 
 export function ColorSelector({
@@ -14,14 +14,14 @@ export function ColorSelector({
   if (colors.length === 0) return null
 
   return (
-    <div className="flex items-end gap-1.5">
+    <div className="flex flex-wrap items-end gap-1.5">
       {colors.map((color) => {
         const isSelected = color.id === selectedId
         return (
           <button
             key={color.id}
             type="button"
-            onClick={() => onChange?.(color.id)}
+            onClick={() => onChange(color.id)}
             className={`flex h-[26px] items-center justify-center rounded-[2px] border-[0.5px] px-[3px] py-px ${
               isSelected
                 ? 'border-wyze-green bg-wyze-green-bg'
