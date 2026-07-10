@@ -1,6 +1,6 @@
-# Wyze Security Bundle Builder
+# Excom Exprts Tasj
 
-A React prototype of a multi-step bundle builder with a live review panel. Built as a frontend take-home — desktop fidelity matches the Figma design, with responsive layouts for tablet and mobile.
+A React prototype of a multi-step bundle builder with a live review panel.
 
 ## Quick start
 
@@ -56,37 +56,6 @@ All UI is driven from `src/data/catalog.json`. Products define:
 - Flags: `required`, `stepperDisabled`, `isFree`, `isMonthly`, `selectionMode: "single"` (plans)
 
 Initial state matches the Figma design: 2 cameras selected, Cam Unlimited plan, 2 motion sensors + required hub, 2 microSD cards.
-
-## Key decisions & tradeoffs
-
-| Area | Decision |
-|------|----------|
-| **State** | React context + derived review/totals (no external state library) |
-| **Persistence** | `localStorage` key `wyze-bundle-config`; auto-saves on every change |
-| **Variants** | Quantities keyed as `stepId:productId:variantId` |
-| **Plan step** | Single-select via `selectionMode: "single"` — only one plan at a time |
-| **Checkout** | Placeholder `alert()` — out of scope for this prototype |
-| **Fonts** | Gilroy via CDN with Inter fallback |
-| **Responsive** | Three layouts: mobile stack, tablet stack + 2-col review, desktop side-by-side |
-
-## Interactions implemented
-
-- [x] Accordion expand/collapse (Step 1 open on load)
-- [x] "N selected" counter per step
-- [x] Variant selection with per-variant quantities
-- [x] Card ↔ review quantity sync
-- [x] Live total recalculation
-- [x] Selected card border when qty > 0
-- [x] Disabled stepper for required hub
-- [x] Save / restore via localStorage
-- [x] Responsive mobile + tablet layouts
-
-## Not finished / out of scope
-
-- Full product UI for every step in mobile collapsed state (steps expand to show products)
-- Selected-chip styling polish (per brief: behavior over chip highlight)
-- Backend API for catalog (local JSON only)
-- Checkout flow
 
 ## Assets
 
